@@ -4,8 +4,7 @@ import NotFound from "./pages/404";
 import login from "./pages/login";
 import {
   HashRouter as Router,
-  Route,
-  Switch,Redirect} from "react-router-dom";
+  Route,Switch,Redirect} from "react-router-dom";
 import "./App.less";
 
 const App = () => (
