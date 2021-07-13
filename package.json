@@ -85,7 +85,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -175,6 +176,8 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.0",
     "prettier": "2.3.2"
   },
   "husky": {
@@ -183,6 +186,6 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md,ts,tsx,json}":"prettier --white"
+    "*.{js,css,md,ts,tsx,json}": "prettier --white"
   }
 }
