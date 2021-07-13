@@ -1,5 +1,3 @@
-const CRouter = ()=>{
+const CRouter = () => {};
 
-}
-
-export default CRouter
+export default CRouter;

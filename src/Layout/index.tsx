@@ -1,4 +1,2 @@
-const Layout = () => (
-  <div>2321</div>
-)
-export default Layout
+const Layout = () => <div>2321</div>;
+export default Layout;
