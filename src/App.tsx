@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './Layout';
 import NotFound from './pages/404'
 import login from './pages/login';
-import { HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 import './App.less';
 
 const App = () => (
