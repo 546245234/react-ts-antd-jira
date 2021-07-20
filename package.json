@@ -48,6 +48,7 @@
     "jest-circus": "26.6.0",
     "jest-resolve": "26.6.0",
     "jest-watch-typeahead": "0.6.1",
+    "json-server": "^0.16.3",
     "less": "^4.1.1",
     "less-loader": "5.0.0",
     "mini-css-extract-plugin": "0.11.3",
@@ -59,6 +60,7 @@
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "5.0.2",
     "prompts": "2.4.0",
+    "qs": "^6.10.1",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
@@ -86,7 +88,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "json-server": "json-server --watch __json_server_mock__/db.json --port 3001"
   },
   "eslintConfig": {
     "extends": [
