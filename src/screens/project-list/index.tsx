@@ -1,8 +1,8 @@
 import React from "react"
 import { List } from "./list"
 import { SearchPanel } from "./search-panel"
-import { useState, useEffect } from "react";
-import { cleanObject } from "utils";
+import { useState } from "react";
+import { cleanObject, useMount, useDebounce } from "utils";
 import qs from 'qs'
 
 export const ProjectListScreen = () => {
@@ -13,29 +13,30 @@ export const ProjectListScreen = () => {
     })
     const [list, setList] = useState([])
     const [users, setUsers] = useState([])
+    const debouceParam = useDebounce(param, 500)
 
-    useEffect(() => {
-        fetch(`${api}/projects?${qs.stringify(cleanObject(param))}`).then(async res => {
+    useMount(() => {
+        fetch(`${api}/projects?${qs.stringify(cleanObject(debouceParam))}`).then(async res => {
             if (res.ok) {
                 setList(await res.json())
             }
         })
-    // eslint-disable-next-line
-    }, [param])
+        // eslint-disable-next-line
+    }, [debouceParam])
 
-    useEffect(()=>{
+    useMount(() => {
         fetch(`${api}/users`).then(async res => {
             if (res.ok) {
                 setUsers(await res.json())
             }
         })
-    // eslint-disable-next-line
-    },[])
+        // eslint-disable-next-line
+    })
 
     return (
         <div>
             <SearchPanel param={param} setParam={setParam} users={users}></SearchPanel>
-            <List list={list} setList={setList} users={users}></List>
+            <List list={list} users={users}></List>
         </div>
     )
 }
