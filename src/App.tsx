@@ -1,13 +1,20 @@
 import React from "react";
-import Login from "screens/login";
 import "./App.less";
-// import { ProjectListScreen } from "screens/project-list";
+import { UnauthenticatedApp } from "unauthenticated-app";
+import { AuthenticatedApp } from "authenticated-app";
+import { useAuth } from "context/auth-context";
+import { FullPageErrorFallback } from "components/lib";
+import { ErrorBoundary } from "components/error-boundary";
 
-const App = () => (
-  <div className="app">
-    {/* <ProjectListScreen></ProjectListScreen> */}
-    <Login />
-  </div>
-);
+const App = () => {
+  const { user } = useAuth()
+  return (
+    <div className="app">
+      <ErrorBoundary fallbackRender={FullPageErrorFallback}>
+        {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+      </ErrorBoundary>
+    </div>
+  )
+}
 
 export default App;

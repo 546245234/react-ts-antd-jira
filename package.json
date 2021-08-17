@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -16,6 +18,7 @@
     "@types/query-string": "^6.3.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-helmet": "^6.1.2",
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
@@ -30,6 +33,7 @@
     "camelcase": "^6.1.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "css-loader": "4.3.0",
+    "dayjs": "^1.10.6",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
     "eslint": "^7.11.0",
@@ -50,6 +54,7 @@
     "jest-circus": "26.6.0",
     "jest-resolve": "26.6.0",
     "jest-watch-typeahead": "0.6.1",
+    "jira-dev-tool": "^1.6.59",
     "json-server": "^0.16.3",
     "less": "^4.1.1",
     "less-loader": "5.0.0",
@@ -69,8 +74,11 @@
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-query": "^3.19.1",
     "react-refresh": "^0.8.3",
-    "react-router-dom": "^5.2.0",
+    "react-router": "^6.0.0-beta.0",
+    "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "^4.0.3",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
@@ -181,10 +189,13 @@
     ]
   },
   "devDependencies": {
+    "@welldone-software/why-did-you-render": "^6.2.0",
     "eslint-config-prettier": "^8.3.0",
+    "history": "^5.0.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.0",
-    "prettier": "2.3.2"
+    "prettier": "2.3.2",
+    "styled-components": "^5.3.0"
   },
   "husky": {
     "hooks": {
@@ -193,5 +204,8 @@
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
